@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.gradleVinz.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.gradleVinz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.gradleVinz_main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.gradleVinz_main.iml" group="demo.gradleVinz" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.gradleVinz_test.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.gradleVinz_test.iml" group="demo.gradleVinz" />
+    </modules>
+  </component>
+</project>
