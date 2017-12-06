@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="demo.BookingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-06T06:41:04" hostname="Vinz-MacBook-Pro.local" time="9.886">
+  <properties/>
+  <testcase name="TicketInforCheck" classname="demo.BookingTest" time="9.886"/>
+  <system-out><![CDATA[demo.TicketInfor Object {
+  outFlightPort: Frankfurt to London
+  outFlightName: 2/2/2017 @ 5:03 w/ Blue Skies Airlines 360
+  outFlightClass: Business
+  outFlightPrice: $270 each
+  inFlightPort: London to Frankfurt
+  inFlightName: 2/25/2017 @ 12:23 w/ Blue Skies Airlines 630
+  inFlightClass: Business
+  inFlightPrice: $270 each
+  passCount: 1 passenger
+  billAddress: 1325 Borregas Ave.
+
+Sunnyvale, CA, 94089
+  delAddress: 1325 Borregas Ave.
+
+Sunnyvale, CA, 94089
+  tax: $44 USD
+  totalPrice: $584 USD
+}]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 9252
+Only local connections are allowed.
+Dec 06, 2017 1:41:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+]]></system-err>
+</testsuite>
