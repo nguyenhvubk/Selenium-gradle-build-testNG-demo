@@ -1,9 +1,12 @@
 package demo;
 
+import demo.pageObject.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Month;
@@ -11,19 +14,21 @@ import java.util.List;
 
 public class Booking {
 
+    void waitForLoad(WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("findFlights")));
+    }
+
     public TicketInfor booking(WebDriver driver){
 
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
 
         //log gin
-        WebElement userName = driver.findElement(By.name("userName"));
-        userName.sendKeys("tutorial");
+        HomePage.logIn(driver);
 
-        WebElement passWord = driver.findElement(By.name("password"));
-        passWord.sendKeys("tutorial");
+        waitForLoad(driver);
 
-        driver.findElement(By.name("login")).click();
-
+        System.out.println(driver.getCurrentUrl());
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
 
         //flight finder
@@ -130,8 +135,8 @@ public class Booking {
         ticket.setInFlightClass(_serviceClass);
 
         ticket.setPassCount(_passCount + " passenger");
-        ticket.setBillAddress(_billAddress + "\n\n" + _billCity + ", " + _billState + ", " + _billPostal);
-        ticket.setDelAddress(_delAddress + "\n\n" + _delCity + ", " + _delState + ", " + _delPostal);
+        ticket.setBillAdd(_billAddress + "\n\n" + _billCity + ", " + _billState + ", " + _billPostal);
+        ticket.setDelAdd(_delAddress + "\n\n" + _delCity + ", " + _delState + ", " + _delPostal);
 
         ticket.setTax(_tax + " USD");
         ticket.setTotalPrice(_totalPrice + " USD");

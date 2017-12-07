@@ -4,6 +4,221 @@ import java.lang.reflect.Field;
 
 public class TicketInfor {
 
+    String firstName;
+    String lastName;
+    String creditNum;
+
+    String flightType;
+    String passCountSelect;
+
+    String outFlightPortSelect;
+    String outFlightMonth;
+    String outFlightDate;
+
+    String inFlightPortSelect;
+    String inFlightMonth;
+    String inFlightDate;
+
+    String flightClassSelect;
+    String airline;
+
+    String outFlightSelect;
+    String inFlightSelect;
+
+    String billAddress;
+    String billCity;
+    String billState;
+    String billPostal;
+
+    String delAddress;
+    String delCity;
+    String delState;
+    String delPostal;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getCreditNum() {
+        return creditNum;
+    }
+
+    public void setCreditNum(String creditNum) {
+        this.creditNum = creditNum;
+    }
+
+    public String getFlightType() {
+        return flightType;
+    }
+
+    public void setFlightType(String flightType) {
+        this.flightType = flightType;
+    }
+
+    public String getPassCountSelect() {
+        return passCountSelect;
+    }
+
+    public void setPassCountSelect(String passCountSelect) {
+        this.passCountSelect = passCountSelect;
+    }
+
+    public String getOutFlightPortSelect() {
+        return outFlightPortSelect;
+    }
+
+    public void setOutFlightPortSelect(String outFlightPortSelect) {
+        this.outFlightPortSelect = outFlightPortSelect;
+    }
+
+    public String getOutFlightMonth() {
+        return outFlightMonth;
+    }
+
+    public void setOutFlightMonth(String outFlightMonth) {
+        this.outFlightMonth = outFlightMonth;
+    }
+
+    public String getOutFlightDate() {
+        return outFlightDate;
+    }
+
+    public void setOutFlightDate(String outFlightDate) {
+        this.outFlightDate = outFlightDate;
+    }
+
+    public String getInFlightPortSelect() {
+        return inFlightPortSelect;
+    }
+
+    public void setInFlightPortSelect(String inFlightPortSelect) {
+        this.inFlightPortSelect = inFlightPortSelect;
+    }
+
+    public String getInFlightMonth() {
+        return inFlightMonth;
+    }
+
+    public void setInFlightMonth(String inFlightMonth) {
+        this.inFlightMonth = inFlightMonth;
+    }
+
+    public String getInFlightDate() {
+        return inFlightDate;
+    }
+
+    public void setInFlightDate(String inFlightDate) {
+        this.inFlightDate = inFlightDate;
+    }
+
+    public String getFlightClassSelect() {
+        return flightClassSelect;
+    }
+
+    public void setFlightClassSelect(String flightClassSelect) {
+        this.flightClassSelect = flightClassSelect;
+    }
+
+    public String getAirline() {
+        return airline;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
+
+    public String getOutFlightSelect() {
+        return outFlightSelect;
+    }
+
+    public void setOutFlightSelect(String outFlightSelect) {
+        this.outFlightSelect = outFlightSelect;
+    }
+
+    public String getInFlightSelect() {
+        return inFlightSelect;
+    }
+
+    public void setInFlightSelect(String inFlightSelect) {
+        this.inFlightSelect = inFlightSelect;
+    }
+
+    public String getBillAddress() {
+        return billAddress;
+    }
+
+    public void setBillAddress(String billAddress) {
+        this.billAddress = billAddress;
+    }
+
+    public String getBillCity() {
+        return billCity;
+    }
+
+    public void setBillCity(String billCity) {
+        this.billCity = billCity;
+    }
+
+    public String getBillState() {
+        return billState;
+    }
+
+    public void setBillState(String billState) {
+        this.billState = billState;
+    }
+
+    public String getBillPostal() {
+        return billPostal;
+    }
+
+    public void setBillPostal(String billPostal) {
+        this.billPostal = billPostal;
+    }
+
+    public String getDelAddress() {
+        return delAddress;
+    }
+
+    public void setDelAddress(String delAddress) {
+        this.delAddress = delAddress;
+    }
+
+    public String getDelCity() {
+        return delCity;
+    }
+
+    public void setDelCity(String delCity) {
+        this.delCity = delCity;
+    }
+
+    public String getDelState() {
+        return delState;
+    }
+
+    public void setDelState(String delState) {
+        this.delState = delState;
+    }
+
+    public String getDelPostal() {
+        return delPostal;
+    }
+
+    public void setDelPostal(String delPostal) {
+        this.delPostal = delPostal;
+    }
+
     String outFlightPort;
     String outFlightName;
     String outFlightClass;
@@ -15,11 +230,13 @@ public class TicketInfor {
     String inFlightPrice;
 
     String passCount;
-    String billAddress;
-    String delAddress;
+    String billAdd;
+    String delAdd;
 
     String tax;
     String totalPrice;
+
+
 
     @Override
     public String toString() {
@@ -123,20 +340,20 @@ public class TicketInfor {
         this.passCount = passCount;
     }
 
-    public String getBillAddress() {
-        return billAddress;
+    public String getBillAdd() {
+        return billAdd;
     }
 
-    public void setBillAddress(String billAddress) {
-        this.billAddress = billAddress;
+    public void setBillAdd(String billAdd) {
+        this.billAdd = billAdd;
     }
 
-    public String getDelAddress() {
-        return delAddress;
+    public String getDelAdd() {
+        return delAdd;
     }
 
-    public void setDelAddress(String delAddress) {
-        this.delAddress = delAddress;
+    public void setDelAdd(String delAdd) {
+        this.delAdd = delAdd;
     }
 
     public String getTax() {
