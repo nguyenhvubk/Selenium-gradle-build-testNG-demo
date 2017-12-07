@@ -34,51 +34,8 @@ public class Booking {
 
         //flight finder
 
-        //TicketInfor flightFinder = FlightFinder.selectFlight(driver, data);
-
-        ////flight details
-        List<WebElement> tripType = driver.findElements(By.name("tripType"));
-        tripType.get(0).click();
-
-        Select passCount = new Select(driver.findElement(By.name("passCount")));
-        passCount.selectByIndex(0);
-        String _passCount = passCount.getOptions().get(0).getText().trim();
-
-        Select fromPort = new Select(driver.findElement(By.name("fromPort")));
-        fromPort.selectByIndex(1);
-        String _fromPort = fromPort.getOptions().get(1).getText();
-
-        Select fromMonth = new Select(driver.findElement(By.name("fromMonth")));
-        fromMonth.selectByIndex(1);
-        String _fromMonth = fromMonth.getOptions().get(1).getText();
-
-        Select fromDay = new Select(driver.findElement(By.name("fromDay")));
-        fromDay.selectByIndex(1);
-        String _fromDay = fromDay.getOptions().get(1).getText();
-
-        Select toPort = new Select(driver.findElement(By.name("toPort")));
-        toPort.selectByIndex(2);
-        String _toPort = toPort.getOptions().get(2).getText();
-
-        Select toMonth = new Select(driver.findElement(By.name("toMonth")));
-        toMonth.selectByIndex(1);
-        String _toMonth = toMonth.getOptions().get(1).getText();
-
-        Select toDay = new Select(driver.findElement(By.name("toDay")));
-        toDay.selectByIndex(24);
-        String _toDay = toDay.getOptions().get(24).getText();
-
-        ////Preferences
-        List<WebElement> serviceClass = driver.findElements(By.name("servClass"));
-        serviceClass.get(1).click();
-        String _serviceClass = serviceClass.get(1).getAttribute("value");//getText() do not work
-
-        Select airline = new Select(driver.findElement(By.name("airline")));
-        airline.selectByIndex(1);
-        String _airline = airline.getOptions().get(1).getText();
-
-        driver.findElement(By.name("findFlights")).click();
-
+        TicketInfor flightFinder = FlightFinder.selectFlight(driver, data);
+        
         //Select Flight
         List<WebElement> outFlight = driver.findElements(By.name("outFlight"));
         outFlight.get(0).click();
@@ -126,19 +83,19 @@ public class Booking {
         //Cast Ticket Information
         TicketInfor ticket = new TicketInfor();
 
-        String outDate = Month.valueOf(_fromMonth.toUpperCase()).getValue() + "/" + _fromDay + "/2017";
-        ticket.setOutFlightPort(_fromPort + " to " + _toPort);
+        String outDate = Month.valueOf(flightFinder.getOutFlightMonth().toUpperCase()).getValue() + "/" + flightFinder.getOutFlightDate() + "/2017";
+        ticket.setOutFlightPort(flightFinder.getOutFlightPortSelect() + " to " + flightFinder.getInFlightPortSelect());
         ticket.setOutFlightPrice("$" + _outFlightPrice + " each");
         ticket.setOutFlightName(outDate + " @ " + _outFlightTime + " w/ " + _outFlightName);
-        ticket.setOutFlightClass(_serviceClass);
+        ticket.setOutFlightClass(flightFinder.getFlightClassSelect());
 
-        String inDate = Month.valueOf(_toMonth.toUpperCase()).getValue() + "/" + _toDay + "/2017";
-        ticket.setInFlightPort(_toPort + " to " + _fromPort);
+        String inDate = Month.valueOf(flightFinder.getInFlightMonth().toUpperCase()).getValue() + "/" + flightFinder.getInFlightDate() + "/2017";
+        ticket.setInFlightPort(flightFinder.getInFlightPortSelect() + " to " + flightFinder.getOutFlightPortSelect());
         ticket.setInFlightName(inDate + " @ " + _inFlightTime + " w/ " + _inFlightName);
         ticket.setInFlightPrice("$" + _inFlightPrice + " each");
-        ticket.setInFlightClass(_serviceClass);
+        ticket.setInFlightClass(flightFinder.getFlightClassSelect());
 
-        ticket.setPassCount(_passCount + " passenger");
+        ticket.setPassCount(flightFinder.getPassCountSelect() + " passenger");
         ticket.setBillAdd(_billAddress + "\n\n" + _billCity + ", " + _billState + ", " + _billPostal);
         ticket.setDelAdd(_delAddress + "\n\n" + _delCity + ", " + _delState + ", " + _delPostal);
 

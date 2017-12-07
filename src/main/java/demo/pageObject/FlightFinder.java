@@ -20,38 +20,47 @@ public class FlightFinder {
         Select passCount = new Select(driver.findElement(By.name("passCount")));
         passCount.selectByIndex(new Integer(data.getPassCountSelect()));
         String _passCount = passCount.getOptions().get(new Integer(data.getPassCountSelect())).getText().trim();
+        out.setPassCountSelect(_passCount);
 
         Select fromPort = new Select(driver.findElement(By.name("fromPort")));
-        fromPort.selectByIndex(1);
-        String _fromPort = fromPort.getOptions().get(1).getText();
+        fromPort.selectByIndex(new Integer(data.getOutFlightPortSelect()));
+        String _fromPort = fromPort.getOptions().get(new Integer(data.getOutFlightPortSelect())).getText().trim();
+        out.setOutFlightPortSelect(_fromPort);
 
         Select fromMonth = new Select(driver.findElement(By.name("fromMonth")));
-        fromMonth.selectByIndex(1);
-        String _fromMonth = fromMonth.getOptions().get(1).getText();
+        fromMonth.selectByIndex(new Integer(data.getOutFlightMonth()));
+        String _fromMonth = fromMonth.getOptions().get(new Integer(data.getOutFlightMonth())).getText().trim();
+        out.setOutFlightMonth(_fromMonth);
 
         Select fromDay = new Select(driver.findElement(By.name("fromDay")));
-        fromDay.selectByIndex(1);
-        String _fromDay = fromDay.getOptions().get(1).getText();
+        fromDay.selectByIndex(new Integer(data.getOutFlightDate()));
+        String _fromDay = fromDay.getOptions().get(new Integer(data.getOutFlightDate())).getText().trim();
+        out.setOutFlightDate(_fromDay);
 
         Select toPort = new Select(driver.findElement(By.name("toPort")));
-        toPort.selectByIndex(2);
-        String _toPort = toPort.getOptions().get(2).getText();
+        toPort.selectByIndex(new Integer(data.getInFlightPortSelect()));
+        String _toPort = toPort.getOptions().get(new Integer(data.getInFlightPortSelect())).getText().trim();
+        out.setInFlightPortSelect(_toPort);
 
         Select toMonth = new Select(driver.findElement(By.name("toMonth")));
-        toMonth.selectByIndex(1);
-        String _toMonth = toMonth.getOptions().get(1).getText();
+        toMonth.selectByIndex(new Integer(data.getInFlightMonth()));
+        String _toMonth = toMonth.getOptions().get(new Integer(data.getInFlightMonth())).getText().trim();
+        out.setInFlightMonth(_toMonth);
 
         Select toDay = new Select(driver.findElement(By.name("toDay")));
-        toDay.selectByIndex(24);
-        String _toDay = toDay.getOptions().get(24).getText();
+        toDay.selectByIndex(new Integer(data.getInFlightDate()));
+        String _toDay = toDay.getOptions().get(new Integer(data.getInFlightDate())).getText().trim();
+        out.setInFlightDate(_toDay);
 
         List<WebElement> serviceClass = driver.findElements(By.name("servClass"));
-        serviceClass.get(1).click();
-        String _serviceClass = serviceClass.get(1).getAttribute("value");//getText() do not work
+        serviceClass.get(new Integer(data.getFlightClassSelect())).click();
+        String _serviceClass = serviceClass.get(new Integer(data.getFlightClassSelect())).getAttribute("value");//getText() do not work
+        out.setFlightClassSelect(_serviceClass);
 
         Select airline = new Select(driver.findElement(By.name("airline")));
-        airline.selectByIndex(1);
-        String _airline = airline.getOptions().get(1).getText();
+        airline.selectByIndex(new Integer(data.getAirline()));
+        String _airline = airline.getOptions().get(new Integer(data.getAirline())).getText().trim();
+        out.setAirline(_airline);
 
         driver.findElement(By.name("findFlights")).click();
 
