@@ -1,5 +1,6 @@
 package demo;
 
+import demo.pageObject.FlightFinder;
 import demo.pageObject.HomePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,19 +20,22 @@ public class Booking {
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("findFlights")));
     }
 
-    public TicketInfor booking(WebDriver driver){
+    public TicketInfor booking(WebDriver driver, TicketInfor data){
 
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
 
         //log gin
-        HomePage.logIn(driver);
+        HomePage.logIn(driver, data);
 
         waitForLoad(driver);
 
-        System.out.println(driver.getCurrentUrl());
+        //System.out.println(driver.getCurrentUrl());
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
 
         //flight finder
+
+        //TicketInfor flightFinder = FlightFinder.selectFlight(driver, data);
+
         ////flight details
         List<WebElement> tripType = driver.findElements(By.name("tripType"));
         tripType.get(0).click();

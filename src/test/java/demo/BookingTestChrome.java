@@ -20,16 +20,45 @@ public class BookingTestChrome {
 
         Properties prop = new Properties();
         InputStream input = null;
+        TicketInfor inputData = new TicketInfor();
 
         try {
 
-            input = new FileInputStream("config.properties");
+            input = new FileInputStream("./TestData/config.properties");
 
             // load a properties file
             prop.load(input);
 
-            TicketInfor inputData = new TicketInfor();
+            inputData.setUserName(prop.getProperty("userName"));
+            inputData.setPassWord(prop.getProperty("passWord"));
+
             inputData.setFlightType(prop.getProperty("flightType"));
+            inputData.setPassCountSelect(prop.getProperty("passCount"));
+            inputData.setOutFlightPortSelect(prop.getProperty("outFlightPort"));
+            inputData.setOutFlightMonth(prop.getProperty("outFlightMonth"));
+            inputData.setOutFlightDate(prop.getProperty("outFlightDate"));
+            inputData.setInFlightPortSelect(prop.getProperty("inFlightPort"));
+            inputData.setInFlightMonth(prop.getProperty("inFlightMonth"));
+            inputData.setInFlightDate(prop.getProperty("inFlightDate"));
+            inputData.setFlightClassSelect(prop.getProperty("flightClass"));
+            inputData.setAirline(prop.getProperty("airline"));
+
+            inputData.setOutFlightSelect(prop.getProperty("outFlightSelect"));
+            inputData.setInFlightSelect(prop.getProperty("inFlightSelect"));
+
+            inputData.setFirstName(prop.getProperty("firstName"));
+            inputData.setLastName(prop.getProperty("lastName"));
+            inputData.setCreditNum(prop.getProperty("creditNum"));
+
+            inputData.setBillAddress(prop.getProperty("billAddress"));
+            inputData.setBillCity(prop.getProperty("billCity"));
+            inputData.setBillState(prop.getProperty("billState"));
+            inputData.setBillPostal(prop.getProperty("billPostal"));
+
+            inputData.setDelAddress(prop.getProperty("delAddress"));
+            inputData.setDelCity(prop.getProperty("delCity"));
+            inputData.setDelState(prop.getProperty("delState"));
+            inputData.setDelPostal(prop.getProperty("delPostal"));
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -44,11 +73,9 @@ public class BookingTestChrome {
         }
 
 
-
-
         TicketInfor result = new TicketInfor();
         Booking t = new  Booking();
-        TicketInfor expect = t.booking(driver);
+        TicketInfor expect = t.booking(driver, inputData);
 
         //Collect flight information
         String outFlightText = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[3]/td/font")).getText();
@@ -75,7 +102,7 @@ public class BookingTestChrome {
         result.setTax(tax);
         result.setTotalPrice(totalPrice);
 
-        System.out.printf(expect.toString());
+        System.out.printf(inputData.toString());
 
         Assert.assertEquals(result.toString(), expect.toString());
 

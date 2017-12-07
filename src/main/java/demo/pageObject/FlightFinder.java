@@ -1,5 +1,6 @@
 package demo.pageObject;
 
+import demo.TicketInfor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,16 +8,18 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-public class FightFinder {
+public class FlightFinder {
 
-    public static void selectFlight(WebDriver driver) {
+    public static TicketInfor selectFlight(WebDriver driver, TicketInfor data) {
+
+        TicketInfor out = new TicketInfor();
 
         List<WebElement> tripType = driver.findElements(By.name("tripType"));
-        tripType.get(0).click();
+        tripType.get(new Integer(data.getFlightType())).click();
 
         Select passCount = new Select(driver.findElement(By.name("passCount")));
-        passCount.selectByIndex(0);
-        String _passCount = passCount.getOptions().get(0).getText().trim();
+        passCount.selectByIndex(new Integer(data.getPassCountSelect()));
+        String _passCount = passCount.getOptions().get(new Integer(data.getPassCountSelect())).getText().trim();
 
         Select fromPort = new Select(driver.findElement(By.name("fromPort")));
         fromPort.selectByIndex(1);
@@ -51,6 +54,8 @@ public class FightFinder {
         String _airline = airline.getOptions().get(1).getText();
 
         driver.findElement(By.name("findFlights")).click();
+
+        return out;
 
     }
 

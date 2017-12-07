@@ -4,6 +4,25 @@ import java.lang.reflect.Field;
 
 public class TicketInfor {
 
+    String userName;
+    String passWord;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassWord() {
+        return passWord;
+    }
+
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
+    }
+
     String firstName;
     String lastName;
     String creditNum;
