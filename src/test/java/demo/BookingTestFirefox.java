@@ -3,19 +3,18 @@ package demo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
-
-public class BookingTest {
+public class BookingTestFirefox {
 
     public WebDriver driver;
 
     @Test
-    public void TicketInforCheck() throws Exception {
+    public void TicketInforCheck() {
 
         TicketInfor result = new TicketInfor();
         Booking t = new  Booking();
@@ -55,7 +54,7 @@ public class BookingTest {
     @BeforeMethod
     public void beforeMethod() throws Exception {
 
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.get("http://newtours.demoaut.com");
 
     }
@@ -63,7 +62,5 @@ public class BookingTest {
     @AfterMethod
     public void afterMethod() throws Exception {
     }
-
-
 
 }

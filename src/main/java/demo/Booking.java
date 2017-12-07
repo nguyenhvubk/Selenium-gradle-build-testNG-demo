@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.time.Month;
 import java.util.List;
@@ -11,6 +12,8 @@ import java.util.List;
 public class Booking {
 
     public TicketInfor booking(WebDriver driver){
+
+        Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
 
         //log gin
         WebElement userName = driver.findElement(By.name("userName"));
@@ -21,6 +24,8 @@ public class Booking {
 
         driver.findElement(By.name("login")).click();
 
+        Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
+
         //flight finder
         ////flight details
         List<WebElement> tripType = driver.findElements(By.name("tripType"));
@@ -28,7 +33,7 @@ public class Booking {
 
         Select passCount = new Select(driver.findElement(By.name("passCount")));
         passCount.selectByIndex(0);
-        String _passCount = passCount.getOptions().get(0).getText();
+        String _passCount = passCount.getOptions().get(0).getText().trim();
 
         Select fromPort = new Select(driver.findElement(By.name("fromPort")));
         fromPort.selectByIndex(1);
@@ -124,7 +129,7 @@ public class Booking {
         ticket.setInFlightPrice("$" + _inFlightPrice + " each");
         ticket.setInFlightClass(_serviceClass);
 
-        ticket.setPassCount(_passCount + "passenger");
+        ticket.setPassCount(_passCount + " passenger");
         ticket.setBillAddress(_billAddress + "\n\n" + _billCity + ", " + _billState + ", " + _billPostal);
         ticket.setDelAddress(_delAddress + "\n\n" + _delCity + ", " + _delState + ", " + _delPostal);
 

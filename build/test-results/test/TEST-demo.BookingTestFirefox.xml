@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="demo.BookingTestFirefox" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-07T02:32:37" hostname="Vinz-MacBook-Pro.local" time="9.639">
+  <properties/>
+  <testcase name="TicketInforCheck" classname="demo.BookingTestFirefox" time="9.639"/>
+  <system-out><![CDATA[demo.TicketInfor Object {
+  outFlightPort: Frankfurt to London
+  outFlightName: 2/2/2017 @ 5:03 w/ Blue Skies Airlines 360
+  outFlightClass: Business
+  outFlightPrice: $270 each
+  inFlightPort: London to Frankfurt
+  inFlightName: 2/25/2017 @ 12:23 w/ Blue Skies Airlines 630
+  inFlightClass: Business
+  inFlightPrice: $270 each
+  passCount: 1 passenger
+  billAddress: 1325 Borregas Ave.
+
+Sunnyvale, CA, 94089
+  delAddress: 1325 Borregas Ave.
+
+Sunnyvale, CA, 94089
+  tax: $44 USD
+  totalPrice: $584 USD
+}]]></system-out>
+  <system-err><![CDATA[1512613953244	geckodriver	INFO	geckodriver 0.19.1
+1512613953250	geckodriver	INFO	Listening on 127.0.0.1:43794
+1512613953446	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-profile" "/var/folders/gr/xy1wrbls11j5v7x3k2psjvvc0000gp/T/rust_mozprofile.rRHk7wTcesqr"
+1512613954087	Marionette	INFO	Enabled via --marionette
+2017-12-07 09:32:35.087 plugin-container[1635:54218] *** CFMessagePort: bootstrap_register(): failed 1100 (0x44c) 'Permission denied', port = 0xa03f, name = 'com.apple.tsm.portname'
+See /usr/include/servers/bootstrap_defs.h for the error codes.
+1512613955628	Marionette	INFO	Listening on port 52812
+1512613955729	Marionette	WARN	TLS certificate errors will be ignored for this session
+1512613955821	Marionette	DEBUG	Register listener.js for window 2147483649
+Dec 07, 2017 9:32:35 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+1512613955856	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1512613956332	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1512613956332	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1512613956529	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://newtours.demoaut.com/"
+1512613957573	Marionette	DEBUG	Received DOM event "pageshow" for "http://newtours.demoaut.com/"
+1512613957703	Marionette	DEBUG	Received DOM event "beforeunload" for "http://newtours.demoaut.com/"
+1512613960240	Marionette	DEBUG	Received DOM event "pagehide" for "http://newtours.demoaut.com/"
+1512613960240	Marionette	DEBUG	Received DOM event "unload" for "http://newtours.demoaut.com/"
+1512613960438	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://newtours.demoaut.com/mercuryreservation.php?osCsid=880fb10b80ca3025f6ea74632de61f85"
+1512613960680	Marionette	DEBUG	Received DOM event "pageshow" for "http://newtours.demoaut.com/mercuryreservation.php?osCsid=880fb10b80ca3025f6ea74632de61f85"
+1512613960925	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613961289	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613961579	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613961871	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613962170	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613962555	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613963195	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613963476	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613963805	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613963845	Marionette	DEBUG	Received DOM event "beforeunload" for "http://newtours.demoaut.com/mercuryreservation.php?osCsid=880fb10b80ca3025f6ea74632de61f85"
+1512613964120	Marionette	DEBUG	Received DOM event "pagehide" for "http://newtours.demoaut.com/mercuryreservation.php?osCsid=880fb10b80ca3025f6ea74632de61f85"
+1512613964121	Marionette	DEBUG	Received DOM event "unload" for "http://newtours.demoaut.com/mercuryreservation.php?osCsid=880fb10b80ca3025f6ea74632de61f85"
+1512613964317	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://newtours.demoaut.com/mercuryreservation2.php"
+1512613964540	Marionette	DEBUG	Received DOM event "pageshow" for "http://newtours.demoaut.com/mercuryreservation2.php"
+1512613964782	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613965033	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1512613965084	Marionette	DEBUG	Received DOM event "beforeunload" for "http://newtours.demoaut.com/mercuryreservation2.php"
+1512613965433	Marionette	DEBUG	Received DOM event "pagehide" for "http://newtours.demoaut.com/mercuryreservation2.php"
+1512613965433	Marionette	DEBUG	Received DOM event "unload" for "http://newtours.demoaut.com/mercuryreservation2.php"
+1512613965828	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://newtours.demoaut.com/mercurypurchase.php"
+1512613966033	Marionette	DEBUG	Received DOM event "pageshow" for "http://newtours.demoaut.com/mercurypurchase.php"
+1512613966331	Marionette	DEBUG	Received DOM event "beforeunload" for "http://newtours.demoaut.com/mercurypurchase.php"
+1512613966665	Marionette	DEBUG	Received DOM event "pagehide" for "http://newtours.demoaut.com/mercurypurchase.php"
+1512613966665	Marionette	DEBUG	Received DOM event "unload" for "http://newtours.demoaut.com/mercurypurchase.php"
+1512613966856	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://newtours.demoaut.com/mercurypurchase2.php"
+1512613967088	Marionette	DEBUG	Received DOM event "pageshow" for "http://newtours.demoaut.com/mercurypurchase2.php"
+]]></system-err>
+</testsuite>
