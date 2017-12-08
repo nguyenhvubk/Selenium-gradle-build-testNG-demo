@@ -7,15 +7,20 @@ import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
-public class HomePage {
+public class HomePage extends ParentPage {
 
-    public static void logIn (WebDriver driver, TicketInfor data) {
+    WebElement userName = driver.findElement(By.name("userName"));
+    WebElement passWord = driver.findElement(By.name("password"));
 
-        WebElement userName = driver.findElement(By.name("userName"));
-        userName.sendKeys(data.getUserName());
+    public HomePage(WebDriver driver){
+        super(driver);
+    }
 
-        WebElement passWord = driver.findElement(By.name("password"));
-        passWord.sendKeys(data.getPassWord());
+    public void validLogIn (TicketInfor data) {
+
+        this.userName.sendKeys(data.getUserName());
+
+        this.passWord.sendKeys(data.getPassWord());
 
         driver.findElement(By.name("login")).click();
 

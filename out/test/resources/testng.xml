@@ -3,7 +3,6 @@
     <test name="Booking">
         <classes>
             <class name="demo.BookingTestChrome" />
-            <class name="demo.BookingTestFirefox" />
 
         </classes>
     </test>

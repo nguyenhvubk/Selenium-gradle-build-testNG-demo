@@ -2,6 +2,8 @@ package demo;
 
 import demo.pageObject.FlightFinder;
 import demo.pageObject.HomePage;
+import demo.pageObject.ParentPage;
+import demo.pageObject.SelectFlight;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -24,19 +26,23 @@ public class Booking {
 
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
 
-        //log gin
-        HomePage.logIn(driver, data);
+        HomePage homePage = new HomePage(driver);
+        FlightFinder flightFinderPage = new FlightFinder();
 
+        //log gin
+        homePage.validLogIn(data);
         waitForLoad(driver);
 
         //System.out.println(driver.getCurrentUrl());
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
 
         //flight finder
-
-        TicketInfor flightFinder = FlightFinder.selectFlight(driver, data);
+        TicketInfor flightFinder = flightFinderPage.selectFlight(driver, data);
         
         //Select Flight
+
+        //TicketInfor selectFlight = SelectFlight.selectFlight(driver, data);
+
         List<WebElement> outFlight = driver.findElements(By.name("outFlight"));
         outFlight.get(0).click();
 

@@ -102,7 +102,7 @@ public class BookingTestChrome {
         result.setTax(tax);
         result.setTotalPrice(totalPrice);
 
-        System.out.printf(inputData.toString());
+        System.out.printf(result.toString());
 
         Assert.assertEquals(result.toString(), expect.toString());
 
