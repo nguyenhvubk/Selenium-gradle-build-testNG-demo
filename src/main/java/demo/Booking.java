@@ -24,20 +24,20 @@ public class Booking {
 
     public TicketInfor booking(WebDriver driver, TicketInfor data){
 
+        //home page check
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
 
-        HomePage homePage = new HomePage(driver);
-        FlightFinder flightFinderPage = new FlightFinder();
-
         //log gin
+        HomePage homePage = new HomePage(driver);
         homePage.validLogIn(data);
         waitForLoad(driver);
 
-        //System.out.println(driver.getCurrentUrl());
+        //login check
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
 
         //flight finder
-        TicketInfor flightFinder = flightFinderPage.selectFlight(driver, data);
+        FlightFinder flightFinderPage = new FlightFinder(driver);
+        TicketInfor flightFinder = flightFinderPage.selectFlight(data);
         
         //Select Flight
 

@@ -2,36 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0daf2082-51be-4beb-ade4-0a0ebd89bfe8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/demo/pageObject/ParentPage.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/java/test/demo/BookingTestFirefox.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileContent/fileContent.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/java/main/demo/Booking.class" afterPath="$PROJECT_DIR$/build/classes/java/main/demo/Booking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/java/main/demo/TicketInfor.class" afterPath="$PROJECT_DIR$/build/classes/java/main/demo/TicketInfor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/java/main/demo/pageObject/HomePage.class" afterPath="$PROJECT_DIR$/build/classes/java/main/demo/pageObject/HomePage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/java/test/demo/BookingTestChrome.class" afterPath="$PROJECT_DIR$/build/classes/java/test/demo/BookingTestChrome.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/demo/Booking.class" afterPath="$PROJECT_DIR$/out/production/classes/demo/Booking.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/demo/pageObject/HomePage.class" afterPath="$PROJECT_DIR$/out/production/classes/demo/pageObject/HomePage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/classes/demo/pageObject/SelectFlight.class" afterPath="$PROJECT_DIR$/out/production/classes/demo/pageObject/SelectFlight.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/resourceHashesCache.bin" afterPath="$PROJECT_DIR$/.gradle/4.3.1/fileHashes/resourceHashesCache.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.3.1/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/demo.BookingTestChrome.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/demo.BookingTestChrome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/demo.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/demo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/test/testng.xml" afterPath="$PROJECT_DIR$/build/resources/test/testng.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/TEST-demo.BookingTestChrome.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-demo.BookingTestChrome.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/resources/testng.xml" afterPath="$PROJECT_DIR$/out/test/resources/testng.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/demo/Booking.java" afterPath="$PROJECT_DIR$/src/main/java/demo/Booking.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/demo/pageObject/HomePage.java" afterPath="$PROJECT_DIR$/src/main/java/demo/pageObject/HomePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/demo/pageObject/SelectFlight.java" afterPath="$PROJECT_DIR$/src/main/java/demo/pageObject/SelectFlight.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/resources/testng.xml" afterPath="$PROJECT_DIR$/src/test/resources/testng.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/demo/pageObject/FlightFinder.java" afterPath="$PROJECT_DIR$/src/main/java/demo/pageObject/FlightFinder.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -83,8 +55,8 @@
       <file leaf-file-name="Booking.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/demo/Booking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="39" column="79" lean-forward="true" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
+            <state relative-caret-position="167">
+              <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,10 +67,12 @@
       <file leaf-file-name="FlightFinder.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/demo/pageObject/FlightFinder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            <state relative-caret-position="1095">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1062#1063#0" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -923,12 +897,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BookingTestChrome - 2017.12.07 at 16h 05m 50s.xml">
-      <configuration name="BookingTestChrome" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="BookingTestChrome - 2017.12.07 at 16h 20m 54s.xml">
-      <configuration name="BookingTestChrome" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="BookingTestChrome - 2017.12.07 at 17h 05m 28s.xml">
       <configuration name="BookingTestChrome" configurationId="TestNG" />
     </history-entry>
@@ -948,6 +916,12 @@
       <configuration name="BookingTestChrome" configurationId="TestNG" />
     </history-entry>
     <history-entry file="BookingTestChrome - 2017.12.08 at 11h 25m 46s.xml">
+      <configuration name="BookingTestChrome" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="BookingTestChrome - 2017.12.08 at 11h 29m 33s.xml">
+      <configuration name="BookingTestChrome" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="BookingTestChrome - 2017.12.08 at 11h 31m 59s.xml">
       <configuration name="BookingTestChrome" configurationId="TestNG" />
     </history-entry>
     <history-entry file="_Users_SA_Desktop_demo_gradleVinz_src_test_resources_testng_xml - 2017.12.08 at 10h 56m 33s.xml">
@@ -1355,8 +1329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demo/Booking.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="39" column="79" lean-forward="true" selection-start-line="39" selection-start-column="79" selection-end-line="39" selection-end-column="79" />
+        <state relative-caret-position="167">
+          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1365,10 +1339,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/demo/pageObject/FlightFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="1095">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
           </folding>
         </state>
       </provider>
