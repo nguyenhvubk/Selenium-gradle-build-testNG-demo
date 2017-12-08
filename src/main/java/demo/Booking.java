@@ -27,7 +27,7 @@ public class Booking {
         //home page check
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
 
-        //log gin
+        //Log In
         HomePage homePage = new HomePage(driver);
         homePage.validLogIn(data);
         waitForLoad(driver);
@@ -35,27 +35,13 @@ public class Booking {
         //login check
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
 
-        //flight finder
+        //Flight Finder
         FlightFinder flightFinderPage = new FlightFinder(driver);
         TicketInfor flightFinder = flightFinderPage.selectFlight(data);
         
         //Select Flight
-
-        //TicketInfor selectFlight = SelectFlight.selectFlight(driver, data);
-
-        List<WebElement> outFlight = driver.findElements(By.name("outFlight"));
-        outFlight.get(0).click();
-
-        String _outFlightName = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table[1]/tbody/tr[3]/td[2]/font/b")).getText();
-        String _outFlightTime = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table[1]/tbody/tr[3]/td[3]/font")).getText();
-
-        List<WebElement> inFlight = driver.findElements(By.name("inFlight"));
-        inFlight.get(0).click();
-
-        String _inFlightName = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table[2]/tbody/tr[3]/td[2]/font/b")).getText();
-        String _inFlightTime = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table[2]/tbody/tr[3]/td[3]/font")).getText();
-
-        driver.findElement(By.name("reserveFlights")).click();
+        SelectFlight selectFlightPage = new SelectFlight(driver);
+        String[] selectFlight = selectFlightPage.selectFlight(data);
 
         //Passenger Details
 
@@ -92,12 +78,12 @@ public class Booking {
         String outDate = Month.valueOf(flightFinder.getOutFlightMonth().toUpperCase()).getValue() + "/" + flightFinder.getOutFlightDate() + "/2017";
         ticket.setOutFlightPort(flightFinder.getOutFlightPortSelect() + " to " + flightFinder.getInFlightPortSelect());
         ticket.setOutFlightPrice("$" + _outFlightPrice + " each");
-        ticket.setOutFlightName(outDate + " @ " + _outFlightTime + " w/ " + _outFlightName);
+        ticket.setOutFlightName(outDate + " @ " + selectFlight[1] + " w/ " + selectFlight[0]);
         ticket.setOutFlightClass(flightFinder.getFlightClassSelect());
 
         String inDate = Month.valueOf(flightFinder.getInFlightMonth().toUpperCase()).getValue() + "/" + flightFinder.getInFlightDate() + "/2017";
         ticket.setInFlightPort(flightFinder.getInFlightPortSelect() + " to " + flightFinder.getOutFlightPortSelect());
-        ticket.setInFlightName(inDate + " @ " + _inFlightTime + " w/ " + _inFlightName);
+        ticket.setInFlightName(inDate + " @ " + selectFlight[3] + " w/ " + selectFlight[2]);
         ticket.setInFlightPrice("$" + _inFlightPrice + " each");
         ticket.setInFlightClass(flightFinder.getFlightClassSelect());
 
