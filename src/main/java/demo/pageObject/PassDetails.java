@@ -1,40 +1,70 @@
 package demo.pageObject;
 
+import demo.TicketInfor;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PassDetails {
+public class PassDetails extends ParentPage {
 
-    public static void inPutInfor (WebDriver driver){
+    WebElement passFirstName = driver.findElement(By.name("passFirst0"));
+    WebElement passLastName = driver.findElement(By.name("passLast0"));
+    WebElement creditNum = driver.findElement(By.name("creditnumber"));
 
-        String _outFlightPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/font")).getText();
-        String _inFlightPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[6]/td[3]/font")).getText();
+    WebElement billAddress = driver.findElement(By.name("billAddress1"));
+    WebElement billCity = driver.findElement(By.name("billCity"));
+    WebElement billState = driver.findElement(By.name("billState"));
+    WebElement billPostal = driver.findElement(By.name("billZip"));
 
-        WebElement passFirstName = driver.findElement(By.name("passFirst0"));
+    WebElement delAddress = driver.findElement(By.name("delAddress1"));
+    WebElement delCity = driver.findElement(By.name("delCity"));
+    WebElement delState = driver.findElement(By.name("delState"));
+    WebElement delPostal = driver.findElement(By.name("delZip"));
+
+    public PassDetails(WebDriver driver) {
+        super(driver);
+    }
+
+    public String[] inPutInfor (TicketInfor data){
+
+        String[] out = new String[4];
+
+        String outFlightPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[3]/td[3]/font")).getText();
+        String inFlightPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[6]/td[3]/font")).getText();
+        out[0] = outFlightPrice;
+        out[1] = inFlightPrice;
+
         passFirstName.sendKeys("Vinz");
-
-        WebElement passLastName = driver.findElement(By.name("passLast0"));
         passLastName.sendKeys("Nguyen");
-
-        WebElement creditNum = driver.findElement(By.name("creditnumber"));
         creditNum.sendKeys("0123456789");
 
-        String _billAddress = driver.findElement(By.name("billAddress1")).getAttribute("value");
-        String _billCity = driver.findElement(By.name("billCity")).getAttribute("value");
-        String _billState = driver.findElement(By.name("billState")).getAttribute("value");
-        String _billPostal = driver.findElement(By.name("billZip")).getAttribute("value");
+        billAddress.clear();
+        billCity.clear();
+        billPostal.clear();
+        billState.clear();
+        delAddress.clear();
+        delCity.clear();
+        delState.clear();
+        delPostal.clear();
 
-        String _delAddress = driver.findElement(By.name("delAddress1")).getAttribute("value");
-        String _delCity = driver.findElement(By.name("delCity")).getAttribute("value");
-        String _delState = driver.findElement(By.name("delState")).getAttribute("value");
-        String _delPostal = driver.findElement(By.name("delZip")).getAttribute("value");
+        billAddress.sendKeys(data.getBillAddress());
+        billCity.sendKeys(data.getBillCity());
+        billPostal.sendKeys(data.getBillPostal());
+        billState.sendKeys(data.getBillState());
 
-        String _tax = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[8]/td[2]/font")).getText();
-        String _totalPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[9]/td[2]/font/b")).getText();
+        delAddress.sendKeys(data.getDelAddress());
+        delCity.sendKeys(data.getDelCity());
+        delPostal.sendKeys(data.getDelPostal());
+        delState.sendKeys(data.getDelState());
+
+        String tax = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[8]/td[2]/font")).getText();
+        String totalPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[2]/td/table/tbody/tr[9]/td[2]/font/b")).getText();
+        out[2] = tax;
+        out[3] = totalPrice;
 
         driver.findElement(By.name("buyFlights")).click();
 
+        return out;
     }
 
 }
