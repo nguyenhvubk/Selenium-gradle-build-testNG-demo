@@ -14,12 +14,6 @@ def chrome = project.hasProperty("chrome")
 def firefox = project.hasProperty("firefox")
 
 test {
-    useTestNG(){
-        suites 'src/test/resources/testng.xml'
-    }
-}
-
-test {
     useTestNG() {
         if (chrome) {
             if (Os.isFamily(Os.FAMILY_WINDOWS)) {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.BookingTestChrome" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-11T07:10:20" hostname="Vinz-MacBook-Pro.local" time="9.269">
+<testsuite name="demo.BookingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-12T09:48:05" hostname="Vinz-MacBook-Pro.local" time="9.092">
   <properties/>
-  <testcase name="TicketInforCheck" classname="demo.BookingTestChrome" time="9.269"/>
+  <testcase name="TicketInforCheck" classname="demo.BookingTest" time="9.092"/>
   <system-out><![CDATA[demo.TicketInfor Object {
   userName: null
   passWord: null
@@ -29,13 +29,13 @@
   delState: null
   delPostal: null
   outFlightPort: Acapulco to Frankfurt
-  outFlightName: 1/1/2017 @ 5:03 w/ Blue Skies Airlines 360
+  outFlightName: 1/1/2017 @ 7:10 w/ Blue Skies Airlines 361
   outFlightClass: Business
-  outFlightPrice: $270 each
+  outFlightPrice: $271 each
   inFlightPort: Frankfurt to Acapulco
-  inFlightName: 2/2/2017 @ 12:23 w/ Blue Skies Airlines 630
+  inFlightName: 2/2/2017 @ 16:37 w/ Pangea Airlines 632
   inFlightClass: Business
-  inFlightPrice: $270 each
+  inFlightPrice: $282 each
   passCount: 1 passenger
   billAdd: Ly Tu Trong
 
@@ -43,12 +43,12 @@ Ho Chi Minh, HCM, 700000
   delAdd: Ly Tu Trong
 
 Ho Chi Minh, HCM, 700000
-  tax: $44 USD
-  totalPrice: $584 USD
+  tax: $45 USD
+  totalPrice: $598 USD
 }]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 43017
+  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 12873
 Only local connections are allowed.
-Dec 11, 2017 2:10:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Dec 12, 2017 4:48:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>

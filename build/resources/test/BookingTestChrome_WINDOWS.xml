@@ -2,7 +2,7 @@
 <suite name="Suite1">
     <test name="Booking">
         <parameter name="browserName" value="chrome"/>
-        <parameter name="osName" value="mac"/>
+        <parameter name="osName" value="windows"/>
         <classes>
             <class name="demo.BookingTest" />
 

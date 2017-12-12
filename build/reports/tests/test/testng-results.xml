@@ -2,24 +2,36 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2017-12-11T07:10:16Z" name="Suite1" finished-at="2017-12-11T07:10:29Z" duration-ms="13779">
+  <suite started-at="2017-12-12T09:48:00Z" name="Suite1" finished-at="2017-12-12T09:48:14Z" duration-ms="14417">
     <groups>
     </groups>
-    <test started-at="2017-12-11T07:10:16Z" name="Booking" finished-at="2017-12-11T07:10:29Z" duration-ms="13779">
-      <class name="demo.BookingTestChrome">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:demo.BookingTestChrome@7acd7ea3]" started-at="2017-12-11T14:10:16Z" name="beforeMethod" finished-at="2017-12-11T14:10:20Z" duration-ms="4478" status="PASS">
+    <test started-at="2017-12-12T09:48:00Z" name="Booking" finished-at="2017-12-12T09:48:14Z" duration-ms="14417">
+      <class name="demo.BookingTest">
+        <test-method is-config="true" signature="beforeMethod(java.lang.String, java.lang.String)[pri:0, instance:demo.BookingTest@5af7c2e4]" started-at="2017-12-12T16:48:00Z" name="beforeMethod" finished-at="2017-12-12T16:48:05Z" duration-ms="5262" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mac]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TicketInforCheck()[pri:0, instance:demo.BookingTestChrome@7acd7ea3]" started-at="2017-12-11T14:10:20Z" name="TicketInforCheck" finished-at="2017-12-11T14:10:29Z" duration-ms="9269" status="PASS">
+        <test-method signature="TicketInforCheck()[pri:0, instance:demo.BookingTest@5af7c2e4]" started-at="2017-12-12T16:48:05Z" name="TicketInforCheck" finished-at="2017-12-12T16:48:14Z" duration-ms="9092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TicketInforCheck -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:demo.BookingTestChrome@7acd7ea3]" started-at="2017-12-11T14:10:29Z" name="afterMethod" finished-at="2017-12-11T14:10:29Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:demo.BookingTest@5af7c2e4]" started-at="2017-12-12T16:48:14Z" name="afterMethod" finished-at="2017-12-12T16:48:14Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- demo.BookingTestChrome -->
+      </class> <!-- demo.BookingTest -->
     </test> <!-- Booking -->
   </suite> <!-- Suite1 -->
 </testng-results>
