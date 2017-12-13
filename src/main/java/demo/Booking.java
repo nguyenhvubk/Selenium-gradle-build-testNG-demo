@@ -59,7 +59,7 @@ public class Booking {
         ticket.setInFlightPrice("$" + passDetails[1] + " each");
         ticket.setInFlightClass(flightFinder.getFlightClassSelect());
 
-        ticket.setPassCount(flightFinder.getPassCountSelect() + " passenger");
+        ticket.setPassCount(flightFinder.getPassCountSelect());
         ticket.setBillAdd(data.getBillAddress() + "\n\n" + data.getBillCity() + ", " + data.getBillState() + ", " + data.getBillPostal());
         ticket.setDelAdd(data.getDelAddress() + "\n\n" + data.getDelCity() + ", " + data.getDelState() + ", " + data.getDelPostal());
 

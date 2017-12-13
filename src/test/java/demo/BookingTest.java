@@ -15,7 +15,6 @@ import java.util.Properties;
 public class BookingTest {
 
 
-
     public WebDriver driver;
     public Properties prop = new Properties();
     public InputStream input = null;
@@ -39,7 +38,7 @@ public class BookingTest {
         out.setInFlightClass(inFlightPart[2]);
         out.setInFlightPrice(inFlightPart[3]);
 
-        out.setPassCount(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[7]/td/font")).getText());
+        out.setPassCount(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[7]/td/font")).getText().substring(0,1));
         out.setBillAdd(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[9]/td/p/font[1]")).getText());
         out.setDelAdd(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[11]/td/p/font[1]")).getText());
 
@@ -108,6 +107,7 @@ public class BookingTest {
 
             inputData.setFlightType(prop.getProperty("flightType"));
             inputData.setPassCountSelect(prop.getProperty("passCount"));
+
             inputData.setOutFlightPortSelect(prop.getProperty("outFlightPort"));
             inputData.setOutFlightMonth(prop.getProperty("outFlightMonth"));
             inputData.setOutFlightDate(prop.getProperty("outFlightDate"));
@@ -120,10 +120,15 @@ public class BookingTest {
             inputData.setOutFlightSelect(prop.getProperty("outFlightSelect"));
             inputData.setInFlightSelect(prop.getProperty("inFlightSelect"));
 
-            inputData.setFirstName(prop.getProperty("firstName"));
-            inputData.setLastName(prop.getProperty("lastName"));
-            inputData.setCreditNum(prop.getProperty("creditNum"));
+            Integer passCount = new Integer(inputData.getPassCountSelect()) + 1;
+            String[][] passList = new String[passCount][2];
+            for (int i = 0; i <= new Integer(inputData.getPassCountSelect()); i++){
+                passList[i][0] = prop.getProperty("firstName" + i);
+                passList[i][1] = prop.getProperty("lastName" + i);
+            }
+            inputData.setPassList(passList);
 
+            inputData.setCreditNum(prop.getProperty("creditNum"));
             inputData.setBillAddress(prop.getProperty("billAddress"));
             inputData.setBillCity(prop.getProperty("billCity"));
             inputData.setBillState(prop.getProperty("billState"));

@@ -5,10 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class PassDetails extends ParentPage {
 
-    WebElement passFirstName = driver.findElement(By.name("passFirst0"));
-    WebElement passLastName = driver.findElement(By.name("passLast0"));
+//    WebElement passFirstName = driver.findElement(By.name("passFirst0"));
+//    WebElement passLastName = driver.findElement(By.name("passLast0"));
+
+
     WebElement creditNum = driver.findElement(By.name("creditnumber"));
 
     WebElement billAddress = driver.findElement(By.name("billAddress1"));
@@ -34,9 +38,15 @@ public class PassDetails extends ParentPage {
         out[0] = outFlightPrice;
         out[1] = inFlightPrice;
 
-        passFirstName.sendKeys("Vinz");
-        passLastName.sendKeys("Nguyen");
-        creditNum.sendKeys("0123456789");
+        for (int i = 0; i <= new Integer(data.getPassCountSelect()); i++) {
+            driver.findElement(By.name("passFirst"+i)).sendKeys(data.getPassList()[i][0]);
+            driver.findElement(By.name("passLast"+i)).sendKeys(data.getPassList()[i][1]);
+        }
+
+//        passFirstName.sendKeys(data.getPassList()[0][0]);
+//        passLastName.sendKeys(data.getPassList()[0][1]);
+
+        creditNum.sendKeys(data.getCreditNum());
 
         billAddress.clear();
         billCity.clear();

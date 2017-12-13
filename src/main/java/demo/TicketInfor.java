@@ -23,8 +23,11 @@ public class TicketInfor {
         this.passWord = passWord;
     }
 
-    String firstName;
-    String lastName;
+    String firstName0;
+    String lastName0;
+
+    String[][] passList;
+
     String creditNum;
 
     String flightType;
@@ -54,20 +57,28 @@ public class TicketInfor {
     String delState;
     String delPostal;
 
-    public String getFirstName() {
-        return firstName;
+    public String[][] getPassList() {
+        return passList;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPassList(String[][] passList) {
+        this.passList = passList;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getFirstName0() {
+        return firstName0;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setFirstName0(String firstName0) {
+        this.firstName0 = firstName0;
+    }
+
+    public String getLastName0() {
+        return lastName0;
+    }
+
+    public void setLastName0(String lastName0) {
+        this.lastName0 = lastName0;
     }
 
     public String getCreditNum() {

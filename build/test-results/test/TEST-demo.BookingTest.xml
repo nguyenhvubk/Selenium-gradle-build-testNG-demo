@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.BookingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-12T09:48:05" hostname="Vinz-MacBook-Pro.local" time="9.092">
+<testsuite name="demo.BookingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-13T06:15:47" hostname="Vinz-MacBook-Pro.local" time="10.836">
   <properties/>
-  <testcase name="TicketInforCheck" classname="demo.BookingTest" time="9.092"/>
+  <testcase name="TicketInforCheck" classname="demo.BookingTest" time="10.836"/>
   <system-out><![CDATA[demo.TicketInfor Object {
   userName: null
   passWord: null
-  firstName: null
-  lastName: null
+  firstName0: null
+  lastName0: null
+  passList: null
   creditNum: null
   flightType: null
   passCountSelect: null
@@ -36,19 +37,19 @@
   inFlightName: 2/2/2017 @ 16:37 w/ Pangea Airlines 632
   inFlightClass: Business
   inFlightPrice: $282 each
-  passCount: 1 passenger
+  passCount: 4
   billAdd: Ly Tu Trong
 
 Ho Chi Minh, HCM, 700000
   delAdd: Ly Tu Trong
 
 Ho Chi Minh, HCM, 700000
-  tax: $45 USD
-  totalPrice: $598 USD
+  tax: $182 USD
+  totalPrice: $2394 USD
 }]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 12873
+  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 24969
 Only local connections are allowed.
-Dec 12, 2017 4:48:03 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Dec 13, 2017 1:15:46 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>
