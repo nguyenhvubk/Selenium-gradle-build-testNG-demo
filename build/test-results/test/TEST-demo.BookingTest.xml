@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="demo.BookingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-13T06:32:20" hostname="Vinz-MacBook-Pro.local" time="23.415">
+<testsuite name="demo.BookingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-12-13T08:25:13" hostname="Vinz-MacBook-Pro.local" time="13.579">
   <properties/>
-  <testcase name="TicketInforCheck" classname="demo.BookingTest" time="23.415"/>
+  <testcase name="TicketInforCheck" classname="demo.BookingTest" time="13.579"/>
   <system-out><![CDATA[demo.TicketInfor Object {
   userName: null
   passWord: null
@@ -47,9 +47,9 @@ Ho Chi Minh, HCM, 700000
   tax: $182 USD
   totalPrice: $2394 USD
 }]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 22854
+  <system-err><![CDATA[Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 22003
 Only local connections are allowed.
-Dec 13, 2017 1:32:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+Dec 13, 2017 3:25:11 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: OSS
 ]]></system-err>
 </testsuite>

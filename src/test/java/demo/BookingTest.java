@@ -1,15 +1,23 @@
 package demo;
 
+import demo.pageObject.FlightFinder;
+import demo.pageObject.HomePage;
+import demo.pageObject.PassDetails;
+import demo.pageObject.SelectFlight;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Month;
 import java.util.Properties;
 
 public class BookingTest {
@@ -19,6 +27,11 @@ public class BookingTest {
     public Properties prop = new Properties();
     public InputStream input = null;
     public TicketInfor inputData = new TicketInfor();
+
+    private void waitForLoad(WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, 0);
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("findFlights")));
+    }
 
     private TicketInfor CollectFlightInfor () {
 
@@ -54,16 +67,54 @@ public class BookingTest {
     @Test
     public void TicketInforCheck() {
 
+        //home page check
+        Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
+
+        //Log In
+        HomePage homePage = new HomePage(driver);
+        homePage.validLogIn(inputData);
+        waitForLoad(driver);
+
+        //login check
+        Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
+
+        //Flight Finder
+        FlightFinder flightFinderPage = new FlightFinder(driver);
+        TicketInfor flightFinder = flightFinderPage.selectFlight(inputData);
+
+        //Select Flight
+        SelectFlight selectFlightPage = new SelectFlight(driver);
+        String[] selectFlight = selectFlightPage.selectFlight(inputData);
+
+        //Passenger Details
+        PassDetails passDetailsPage = new PassDetails(driver);
+        String[] passDetails = passDetailsPage.inPutInfor(inputData);
+
+        //Cast Ticket Information
+        TicketInfor expect = new TicketInfor();
         TicketInfor result = new TicketInfor();
-        Booking t = new  Booking();
 
-        TicketInfor expect = t.booking(driver, inputData);
+        String outDate = Month.valueOf(flightFinder.getOutFlightMonth().toUpperCase()).getValue() + "/" + flightFinder.getOutFlightDate() + "/2017";
+        expect.setOutFlightPort(flightFinder.getOutFlightPortSelect() + " to " + flightFinder.getInFlightPortSelect());
+        expect.setOutFlightPrice("$" + passDetails[0] + " each");
+        expect.setOutFlightName(outDate + " @ " + selectFlight[1] + " w/ " + selectFlight[0]);
+        expect.setOutFlightClass(flightFinder.getFlightClassSelect());
 
-        //Collect flight
+        String inDate = Month.valueOf(flightFinder.getInFlightMonth().toUpperCase()).getValue() + "/" + flightFinder.getInFlightDate() + "/2017";
+        expect.setInFlightPort(flightFinder.getInFlightPortSelect() + " to " + flightFinder.getOutFlightPortSelect());
+        expect.setInFlightName(inDate + " @ " + selectFlight[3] + " w/ " + selectFlight[2]);
+        expect.setInFlightPrice("$" + passDetails[1] + " each");
+        expect.setInFlightClass(flightFinder.getFlightClassSelect());
+
+        expect.setPassCount(flightFinder.getPassCountSelect());
+        expect.setBillAdd(inputData.getBillAddress() + "\n\n" + inputData.getBillCity() + ", " + inputData.getBillState() + ", " + inputData.getBillPostal());
+        expect.setDelAdd(inputData.getDelAddress() + "\n\n" + inputData.getDelCity() + ", " + inputData.getDelState() + ", " + inputData.getDelPostal());
+
+        expect.setTax(passDetails[2] + " USD");
+        expect.setTotalPrice(passDetails[3] + " USD");
+
+        //Collect flight infor
         result = CollectFlightInfor();
-
-        System.out.printf(result.toString());
-
         Assert.assertEquals(result.toString(), expect.toString());
 
     }
@@ -71,8 +122,6 @@ public class BookingTest {
     @BeforeMethod
     @Parameters({"browserName" , "osName"})
     public void beforeMethod(@Optional("chrome") String browserName,@Optional("mac") String OsName) throws Exception {
-
-//        driver = new ChromeDriver();
 
         // Init Webdriver based on browser and go to test page
         if (OsName.equalsIgnoreCase("windows")) {
