@@ -70,7 +70,7 @@ public class BookingTest {
 
     @BeforeMethod
     @Parameters({"browserName" , "osName"})
-    public void beforeMethod(String browserName, String OsName) throws Exception {
+    public void beforeMethod(@Optional("chrome") String browserName,@Optional("mac") String OsName) throws Exception {
 
 //        driver = new ChromeDriver();
 
