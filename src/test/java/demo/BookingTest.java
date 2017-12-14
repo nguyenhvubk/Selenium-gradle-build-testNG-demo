@@ -1,100 +1,31 @@
 package demo;
 
-import demo.pageObject.FlightFinder;
-import demo.pageObject.HomePage;
-import demo.pageObject.PassDetails;
-import demo.pageObject.SelectFlight;
-import demo.Utilities.CSVUtil;
-import org.openqa.selenium.By;
+import demo.pageObject.*;
+import demo.Utilities.Utilities;
+
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.time.Month;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
-import java.util.Scanner;
 
 public class BookingTest {
 
-
     public WebDriver driver;
-    public Properties prop = new Properties();
-    public InputStream input = null;
-    public TicketInfor inputData = new TicketInfor();
+    public String CSVPath = "./TestData/Book1.csv";
 
-    private void waitForLoad(WebDriver driver) {
-        WebDriverWait wait = new WebDriverWait(driver, 0);
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("findFlights")));
-    }
+    @DataProvider(name = "TestData")
+    public Object[][] getTestData() throws Exception{
 
-    private List<List<String>> CSVRead() throws Exception {
-
-        List<List<String>> listData = new ArrayList<List<String>>();
-
-        String csvFile = "./TestData/Book1.csv";
-
-        Scanner scanner = new Scanner(new File(csvFile));
-
-        //skip header
-        if (scanner.hasNext()){
-            scanner.nextLine();
-        }
-
-        while (scanner.hasNext()) {
-            List<String> line = CSVUtil.parseLine(scanner.nextLine());
-            //System.out.println(line);
-            listData.add(line);
-        }
-        scanner.close();
-
-        return listData;
-
-    }
-
-    private TicketInfor CollectFlightInfor () {
-
-        TicketInfor out = new TicketInfor();
-
-        String outFlightText = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[3]/td/font")).getText();
-        String[] outFlightPart = outFlightText.split("\n");
-        out.setOutFlightPort(outFlightPart[0]);
-        out.setOutFlightName(outFlightPart[1]);
-        out.setOutFlightClass(outFlightPart[2]);
-        out.setOutFlightPrice(outFlightPart[3]);
-
-        String inFlightText = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[5]/td/font")).getText();
-        String[] inFlightPart = inFlightText.split("\n");
-        out.setInFlightPort(inFlightPart[0]);
-        out.setInFlightName(inFlightPart[1]);
-        out.setInFlightClass(inFlightPart[2]);
-        out.setInFlightPrice(inFlightPart[3]);
-
-        out.setPassCount(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[7]/td/font")).getText().substring(0,1));
-        out.setBillAdd(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[9]/td/p/font[1]")).getText());
-        out.setDelAdd(driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[11]/td/p/font[1]")).getText());
-
-        String tax = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[12]/td/table/tbody/tr[1]/td[2]/font/font/font/b/font")).getText();
-        String totalPrice = driver.findElement(By.xpath("/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[5]/td/table/tbody/tr[12]/td/table/tbody/tr[2]/td[2]/font/b/font/font/b/font")).getText();
-
-        out.setTax(tax);
-        out.setTotalPrice(totalPrice);
-
+        Object[][] out = Utilities.ParseTestDataFromCSV(CSVPath);
         return out;
+
     }
 
-    @Test
-    public void TicketInforCheck() throws Exception {
+    @Test(dataProvider = "TestData")
+    public void TicketInforCheck(TicketInfor inputData, Boolean temp) throws Exception {
 
         //home page check
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
@@ -102,7 +33,7 @@ public class BookingTest {
         //Log In
         HomePage homePage = new HomePage(driver);
         homePage.validLogIn(inputData);
-        waitForLoad(driver);
+        Utilities.waitForLoad(driver, "findFlights");
 
         //login check
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
@@ -143,11 +74,10 @@ public class BookingTest {
         expect.setTotalPrice(passDetails[3] + " USD");
 
         //Collect flight infor
-        result = CollectFlightInfor();
-        Assert.assertEquals(result.toString(), expect.toString());
+        BookedPage bookedPage = new BookedPage(driver);
+        result = bookedPage.CollectResult();
 
-        List<List<String>> listData = CSVRead();
-        System.out.println(listData);
+        Assert.assertEquals(result.toString(), expect.toString());
 
     }
 
@@ -176,65 +106,11 @@ public class BookingTest {
 
         driver.get("http://newtours.demoaut.com");
 
-        try {
-
-            input = new FileInputStream("./TestData/config.properties");
-
-            // load a properties file
-            prop.load(input);
-
-            inputData.setUserName(prop.getProperty("userName"));
-            inputData.setPassWord(prop.getProperty("passWord"));
-
-            inputData.setFlightType(prop.getProperty("flightType"));
-            inputData.setPassCountSelect(prop.getProperty("passCount"));
-
-            inputData.setOutFlightPortSelect(prop.getProperty("outFlightPort"));
-            inputData.setOutFlightMonth(prop.getProperty("outFlightMonth"));
-            inputData.setOutFlightDate(prop.getProperty("outFlightDate"));
-            inputData.setInFlightPortSelect(prop.getProperty("inFlightPort"));
-            inputData.setInFlightMonth(prop.getProperty("inFlightMonth"));
-            inputData.setInFlightDate(prop.getProperty("inFlightDate"));
-            inputData.setFlightClassSelect(prop.getProperty("flightClass"));
-            inputData.setAirline(prop.getProperty("airline"));
-
-            inputData.setOutFlightSelect(prop.getProperty("outFlightSelect"));
-            inputData.setInFlightSelect(prop.getProperty("inFlightSelect"));
-
-            Integer passCount = new Integer(inputData.getPassCountSelect()) + 1;
-            String[][] passList = new String[passCount][2];
-            for (int i = 0; i <= new Integer(inputData.getPassCountSelect()); i++){
-                passList[i][0] = prop.getProperty("firstName" + i);
-                passList[i][1] = prop.getProperty("lastName" + i);
-            }
-            inputData.setPassList(passList);
-
-            inputData.setCreditNum(prop.getProperty("creditNum"));
-            inputData.setBillAddress(prop.getProperty("billAddress"));
-            inputData.setBillCity(prop.getProperty("billCity"));
-            inputData.setBillState(prop.getProperty("billState"));
-            inputData.setBillPostal(prop.getProperty("billPostal"));
-
-            inputData.setDelAddress(prop.getProperty("delAddress"));
-            inputData.setDelCity(prop.getProperty("delCity"));
-            inputData.setDelState(prop.getProperty("delState"));
-            inputData.setDelPostal(prop.getProperty("delPostal"));
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        } finally {
-            if (input != null) {
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
     @AfterMethod
     public void afterMethod() throws Exception {
+        driver.close();
     }
 
 }
