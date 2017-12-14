@@ -4,6 +4,7 @@ import demo.pageObject.FlightFinder;
 import demo.pageObject.HomePage;
 import demo.pageObject.PassDetails;
 import demo.pageObject.SelectFlight;
+import demo.Utilities.CSVUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,11 +15,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
+import java.util.Scanner;
 
 public class BookingTest {
 
@@ -31,6 +36,30 @@ public class BookingTest {
     private void waitForLoad(WebDriver driver) {
         WebDriverWait wait = new WebDriverWait(driver, 0);
         WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.name("findFlights")));
+    }
+
+    private List<List<String>> CSVRead() throws Exception {
+
+        List<List<String>> listData = new ArrayList<List<String>>();
+
+        String csvFile = "./TestData/Book1.csv";
+
+        Scanner scanner = new Scanner(new File(csvFile));
+
+        //skip header
+        if (scanner.hasNext()){
+            scanner.nextLine();
+        }
+
+        while (scanner.hasNext()) {
+            List<String> line = CSVUtil.parseLine(scanner.nextLine());
+            //System.out.println(line);
+            listData.add(line);
+        }
+        scanner.close();
+
+        return listData;
+
     }
 
     private TicketInfor CollectFlightInfor () {
@@ -65,7 +94,7 @@ public class BookingTest {
     }
 
     @Test
-    public void TicketInforCheck() {
+    public void TicketInforCheck() throws Exception {
 
         //home page check
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
@@ -116,6 +145,9 @@ public class BookingTest {
         //Collect flight infor
         result = CollectFlightInfor();
         Assert.assertEquals(result.toString(), expect.toString());
+
+        List<List<String>> listData = CSVRead();
+        System.out.println(listData);
 
     }
 
