@@ -6,6 +6,8 @@ import demo.Utilities.Utilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -83,24 +85,32 @@ public class BookingTest {
 
     @BeforeMethod
     @Parameters({"browserName" , "osName"})
-    public void beforeMethod(@Optional("chrome") String browserName,@Optional("mac") String OsName) throws Exception {
+    public void beforeMethod(String browserName, String OsName) throws Exception {
 
         // Init Webdriver based on browser and go to test page
         if (OsName.equalsIgnoreCase("windows")) {
             if (browserName.equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", "./WebDriver/chromedriver.exe");
                 driver = new ChromeDriver();
-            } else {
+            } else if (browserName.equalsIgnoreCase("firefox")){
                 System.setProperty("webdriver.gecko.driver", "./WebDriver/geckodriver.exe");
                 driver = new FirefoxDriver();
+            } else if (browserName.equalsIgnoreCase("IE")){
+                System.setProperty("webdriver.gecko.driver", "./WebDriver/geckodriver.exe");
+                driver = new InternetExplorerDriver();
             }
         } else if (OsName.equalsIgnoreCase("mac")) {
             if (browserName.equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", "./WebDriver/chromedriver");
                 driver = new ChromeDriver();
-            } else {
+            } else if (browserName.equalsIgnoreCase("firefox")){
                 System.setProperty("webdriver.gecko.driver", "./WebDriver/geckodriver");
                 driver = new FirefoxDriver();
+            } else if (browserName.equalsIgnoreCase("safari")){
+                //System.setProperty("webdriver.safari.driver", "./WebDriver/SafariDriver.safariextz");
+                driver = new SafariDriver();
+                //need developer certification add to safari as well
+                //https://itisatechiesworld.wordpress.com/2015/04/15/steps-to-get-selenium-webdriver-running-on-safari-browser/
             }
         }
 

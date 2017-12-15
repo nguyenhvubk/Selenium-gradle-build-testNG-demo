@@ -12,6 +12,8 @@ repositories {
 
 def chrome = project.hasProperty("chrome")
 def firefox = project.hasProperty("firefox")
+def IE = project.hasProperty("IE")
+def safari = project.hasProperty("safari")
 
 test {
     useTestNG() {
@@ -34,6 +36,24 @@ test {
                 dependsOn cleanTest
                 useDefaultListeners = true
                 suites "src/test/resources/BookingTestFirefox_MAC.xml"
+            }
+        } else if (IE){
+            dependsOn cleanTest
+            useDefaultListeners = true
+            suites "src/test/resources/BookingTestIE_WINDOWS.xml"
+        } else if (safari) {
+            dependsOn cleanTest
+            useDefaultListeners = true
+            suites "src/test/resources/BookingTestSafari_MAC.xml"
+        } else {
+            if (Os.isFamily((Os.FAMILY_MAC))) {
+                dependsOn cleanTest
+                useDefaultListeners = true
+                suites "src/test/resources/BookingTestChrome_MAC.xml"
+            } else {
+                dependsOn cleanTest
+                useDefaultListeners = true
+                suites "src/test/resources/BookingTestChrome_WINDOWS.xml"
             }
         }
     }

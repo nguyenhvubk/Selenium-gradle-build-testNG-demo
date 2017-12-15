@@ -23,25 +23,25 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">9</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">2</div>
+<div class="counter">1</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">2</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2m17.15s</div>
+<div class="counter">6.080s</div>
 <p>duration</p>
 </div>
 </td>
@@ -51,7 +51,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">77%</div>
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -66,351 +66,56 @@
 <li>
 <a href="#tab1">Tests</a>
 </li>
-<li>
-<a href="#tab2">Standard error</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Failed tests</h2>
 <div class="test">
-<a name="TicketInforCheck[2](demo.TicketInfor Object {&#10;  userName: tutorial&#10;  passWord: tutorial&#10;  firstName0: null&#10;  lastName0: null&#10;  passList: [[Ljava.lang.String;@5785324b&#10;  creditNum: 123456789&#10;  flightType: 0&#10;  passCountSelect: 2&#10;  outFlightPortSelect: 2&#10;  outFlightMonth: 2&#10;  outFlightDate: 2&#10;  inFlightPortSelect: 7&#10;  inFlightMonth: 3&#10;  inFlightDate: 3&#10;  flightClassSelect: 2&#10;  airline: 0&#10;  outFlightSelect: 2&#10;  inFlightSelect: 1&#10;  billAddress: Ly Tu Trong&#10;  billCity: Ho Chi Minh&#10;  billState: HCM&#10;  billPostal: 700000&#10;  delAddress: Ly Tu Trong&#10;  delCity: Ho Chi Minh&#10;  delState: HCM&#10;  delPostal: 700000&#10;  outFlightPort: null&#10;  outFlightName: null&#10;  outFlightClass: null&#10;  outFlightPrice: null&#10;  inFlightPort: null&#10;  inFlightName: null&#10;  inFlightClass: null&#10;  inFlightPrice: null&#10;  passCount: null&#10;  billAdd: null&#10;  delAdd: null&#10;  tax: null&#10;  totalPrice: null&#10;}, true)"></a>
-<h3 class="failures">TicketInforCheck[2](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@5785324b
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 2
-  outFlightPortSelect: 2
-  outFlightMonth: 2
-  outFlightDate: 2
-  inFlightPortSelect: 7
-  inFlightMonth: 3
-  inFlightDate: 3
-  flightClassSelect: 2
-  airline: 0
-  outFlightSelect: 2
-  inFlightSelect: 1
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</h3>
+<a name="beforeMethod"></a>
+<h3 class="failures">beforeMethod</h3>
 <span class="code">
-<pre>java.lang.AssertionError: expected [demo.TicketInfor Object {
-  userName: null
-  passWord: null
-  firstName0: null
-  lastName0: null
-  passList: null
-  creditNum: null
-  flightType: null
-  passCountSelect: null
-  outFlightPortSelect: null
-  outFlightMonth: null
-  outFlightDate: null
-  inFlightPortSelect: null
-  inFlightMonth: null
-  inFlightDate: null
-  flightClassSelect: null
-  airline: null
-  outFlightSelect: null
-  inFlightSelect: null
-  billAddress: null
-  billCity: null
-  billState: null
-  billPostal: null
-  delAddress: null
-  delCity: null
-  delState: null
-  delPostal: null
-  outFlightPort: London to Seattle
-  outFlightName: 3/3/2017 @ 9:17 w/ Pangaea Airlines 362
-  outFlightClass: First
-  outFlightPrice: $274 each
-  inFlightPort: Seattle to London
-  inFlightName: 4/4/2017 @ 14:30 w/ Blue Skies Airlines 631
-  inFlightClass: First
-  inFlightPrice: $273 each
-  passCount: 3
-  billAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  delAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  tax: $135 USD
-  totalPrice: $1776 USD
-}] but found [demo.TicketInfor Object {
-  userName: null
-  passWord: null
-  firstName0: null
-  lastName0: null
-  passList: null
-  creditNum: null
-  flightType: null
-  passCountSelect: null
-  outFlightPortSelect: null
-  outFlightMonth: null
-  outFlightDate: null
-  inFlightPortSelect: null
-  inFlightMonth: null
-  inFlightDate: null
-  flightClassSelect: null
-  airline: null
-  outFlightSelect: null
-  inFlightSelect: null
-  billAddress: null
-  billCity: null
-  billState: null
-  billPostal: null
-  delAddress: null
-  delCity: null
-  delState: null
-  delPostal: null
-  outFlightPort: London to Seattle
-  outFlightName: 3/3/2017 @ 9:17 w/ Pangea Airlines 362
-  outFlightClass: First
-  outFlightPrice: $274 each
-  inFlightPort: Seattle to London
-  inFlightName: 4/4/2017 @ 14:30 w/ Blue Skies Airlines 631
-  inFlightClass: First
-  inFlightPrice: $273 each
-  passCount: 3
-  billAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  delAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  tax: $135 USD
-  totalPrice: $1776 USD
-}]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at demo.BookingTest.TicketInforCheck(BookingTest.java:80)
+<pre>org.openqa.selenium.SessionNotCreatedException: Could not create a session: You must enable the 'Allow Remote Automation' option in Safari's Develop menu to control Safari via WebDriver. (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 83 milliseconds
+Build info: version: '3.8.1', revision: '6e95a6684b', time: '2017-12-01T18:33:54.468Z'
+System info: host: 'Vinz-MacBook-Pro.local', ip: '192.168.212.165', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.13.1', java.version: '9.0.1'
+Driver info: driver.version: SafariDriver
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$new$0(JsonWireProtocolResponse.java:53)
+	at org.openqa.selenium.remote.JsonWireProtocolResponse.lambda$getResponseFunction$2(JsonWireProtocolResponse.java:91)
+	at org.openqa.selenium.remote.ProtocolHandshake.lambda$createSession$0(ProtocolHandshake.java:123)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.Spliterators$ArraySpliterator.tryAdvance(Spliterators.java:958)
+	at java.base/java.util.stream.ReferencePipeline.forEachWithCancel(ReferencePipeline.java:127)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:502)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:488)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:152)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:476)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:126)
+	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:73)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:142)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:601)
+	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:219)
+	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:142)
+	at org.openqa.selenium.safari.SafariDriver.&lt;init&gt;(SafariDriver.java:78)
+	at org.openqa.selenium.safari.SafariDriver.&lt;init&gt;(SafariDriver.java:60)
+	at org.openqa.selenium.safari.SafariDriver.&lt;init&gt;(SafariDriver.java:38)
+	at demo.BookingTest.beforeMethod(BookingTest.java:114)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1116)
-	at org.testng.TestNG.runSuites(TestNG.java:1028)
-	at org.testng.TestNG.run(TestNG.java:996)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:129)
-	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:88)
-	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
-	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
-	at com.sun.proxy.$Proxy1.stop(Unknown Source)
-	at org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:119)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
-	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
-	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
-	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
-	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
-	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
-	at java.base/java.lang.Thread.run(Thread.java:844)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="TicketInforCheck[6](demo.TicketInfor Object {&#10;  userName: tutorial&#10;  passWord: tutorial&#10;  firstName0: null&#10;  lastName0: null&#10;  passList: [[Ljava.lang.String;@6af6c0f1&#10;  creditNum: 123456789&#10;  flightType: 0&#10;  passCountSelect: 2&#10;  outFlightPortSelect: 6&#10;  outFlightMonth: 6&#10;  outFlightDate: 6&#10;  inFlightPortSelect: 3&#10;  inFlightMonth: 7&#10;  inFlightDate: 7&#10;  flightClassSelect: 0&#10;  airline: 0&#10;  outFlightSelect: 2&#10;  inFlightSelect: 1&#10;  billAddress: Ly Tu Trong&#10;  billCity: Ho Chi Minh&#10;  billState: HCM&#10;  billPostal: 700000&#10;  delAddress: Ly Tu Trong&#10;  delCity: Ho Chi Minh&#10;  delState: HCM&#10;  delPostal: 700000&#10;  outFlightPort: null&#10;  outFlightName: null&#10;  outFlightClass: null&#10;  outFlightPrice: null&#10;  inFlightPort: null&#10;  inFlightName: null&#10;  inFlightClass: null&#10;  inFlightPrice: null&#10;  passCount: null&#10;  billAdd: null&#10;  delAdd: null&#10;  tax: null&#10;  totalPrice: null&#10;}, true)"></a>
-<h3 class="failures">TicketInforCheck[6](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@6af6c0f1
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 2
-  outFlightPortSelect: 6
-  outFlightMonth: 6
-  outFlightDate: 6
-  inFlightPortSelect: 3
-  inFlightMonth: 7
-  inFlightDate: 7
-  flightClassSelect: 0
-  airline: 0
-  outFlightSelect: 2
-  inFlightSelect: 1
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</h3>
-<span class="code">
-<pre>java.lang.AssertionError: expected [demo.TicketInfor Object {
-  userName: null
-  passWord: null
-  firstName0: null
-  lastName0: null
-  passList: null
-  creditNum: null
-  flightType: null
-  passCountSelect: null
-  outFlightPortSelect: null
-  outFlightMonth: null
-  outFlightDate: null
-  inFlightPortSelect: null
-  inFlightMonth: null
-  inFlightDate: null
-  flightClassSelect: null
-  airline: null
-  outFlightSelect: null
-  inFlightSelect: null
-  billAddress: null
-  billCity: null
-  billState: null
-  billPostal: null
-  delAddress: null
-  delCity: null
-  delState: null
-  delPostal: null
-  outFlightPort: San Francisco to New York
-  outFlightName: 7/7/2017 @ 9:17 w/ Pangaea Airlines 362
-  outFlightClass: Coach
-  outFlightPrice: $274 each
-  inFlightPort: New York to San Francisco
-  inFlightName: 8/8/2017 @ 14:30 w/ Blue Skies Airlines 631
-  inFlightClass: Coach
-  inFlightPrice: $273 each
-  passCount: 3
-  billAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  delAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  tax: $135 USD
-  totalPrice: $1776 USD
-}] but found [demo.TicketInfor Object {
-  userName: null
-  passWord: null
-  firstName0: null
-  lastName0: null
-  passList: null
-  creditNum: null
-  flightType: null
-  passCountSelect: null
-  outFlightPortSelect: null
-  outFlightMonth: null
-  outFlightDate: null
-  inFlightPortSelect: null
-  inFlightMonth: null
-  inFlightDate: null
-  flightClassSelect: null
-  airline: null
-  outFlightSelect: null
-  inFlightSelect: null
-  billAddress: null
-  billCity: null
-  billState: null
-  billPostal: null
-  delAddress: null
-  delCity: null
-  delState: null
-  delPostal: null
-  outFlightPort: San Francisco to New York
-  outFlightName: 7/7/2017 @ 9:17 w/ Pangea Airlines 362
-  outFlightClass: Coach
-  outFlightPrice: $274 each
-  inFlightPort: New York to San Francisco
-  inFlightName: 8/8/2017 @ 14:30 w/ Blue Skies Airlines 631
-  inFlightClass: Coach
-  inFlightPrice: $273 each
-  passCount: 3
-  billAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  delAdd: Ly Tu Trong
-
-Ho Chi Minh, HCM, 700000
-  tax: $135 USD
-  totalPrice: $1776 USD
-}]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at org.testng.Assert.assertEquals(Assert.java:463)
-	at demo.BookingTest.TicketInforCheck(BookingTest.java:80)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:571)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:451)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:516)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:707)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:979)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -470,421 +175,21 @@ Ho Chi Minh, HCM, 700000
 </tr>
 </thead>
 <tr>
-<td class="success">TicketInforCheck[0](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@12c689f9
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 0
-  outFlightPortSelect: 0
-  outFlightMonth: 0
-  outFlightDate: 0
-  inFlightPortSelect: 9
-  inFlightMonth: 1
-  inFlightDate: 1
-  flightClassSelect: 0
-  airline: 0
-  outFlightSelect: 0
-  inFlightSelect: 3
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>20.863s</td>
-<td class="success">passed</td>
+<td class="skipped">TicketInforCheck</td>
+<td>-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="success">TicketInforCheck[1](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@4be04f78
-  creditNum: 123456789
-  flightType: 1
-  passCountSelect: 1
-  outFlightPortSelect: 1
-  outFlightMonth: 1
-  outFlightDate: 1
-  inFlightPortSelect: 8
-  inFlightMonth: 2
-  inFlightDate: 2
-  flightClassSelect: 1
-  airline: 0
-  outFlightSelect: 1
-  inFlightSelect: 2
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>16.169s</td>
-<td class="success">passed</td>
+<td class="skipped">TicketInforCheck</td>
+<td>-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="failures">TicketInforCheck[2](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@5785324b
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 2
-  outFlightPortSelect: 2
-  outFlightMonth: 2
-  outFlightDate: 2
-  inFlightPortSelect: 7
-  inFlightMonth: 3
-  inFlightDate: 3
-  flightClassSelect: 2
-  airline: 0
-  outFlightSelect: 2
-  inFlightSelect: 1
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>16.182s</td>
+<td class="failures">beforeMethod</td>
+<td>6.080s</td>
 <td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">TicketInforCheck[3](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@69e686c1
-  creditNum: 123456789
-  flightType: 1
-  passCountSelect: 3
-  outFlightPortSelect: 3
-  outFlightMonth: 3
-  outFlightDate: 3
-  inFlightPortSelect: 6
-  inFlightMonth: 4
-  inFlightDate: 4
-  flightClassSelect: 0
-  airline: 0
-  outFlightSelect: 3
-  inFlightSelect: 0
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>16.979s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">TicketInforCheck[4](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@ca38e45
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 0
-  outFlightPortSelect: 4
-  outFlightMonth: 4
-  outFlightDate: 4
-  inFlightPortSelect: 5
-  inFlightMonth: 5
-  inFlightDate: 5
-  flightClassSelect: 1
-  airline: 0
-  outFlightSelect: 0
-  inFlightSelect: 3
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>13.597s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">TicketInforCheck[5](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@3fc2d5e8
-  creditNum: 123456789
-  flightType: 1
-  passCountSelect: 1
-  outFlightPortSelect: 5
-  outFlightMonth: 5
-  outFlightDate: 5
-  inFlightPortSelect: 4
-  inFlightMonth: 6
-  inFlightDate: 6
-  flightClassSelect: 2
-  airline: 0
-  outFlightSelect: 1
-  inFlightSelect: 2
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>12.543s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="failures">TicketInforCheck[6](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@6af6c0f1
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 2
-  outFlightPortSelect: 6
-  outFlightMonth: 6
-  outFlightDate: 6
-  inFlightPortSelect: 3
-  inFlightMonth: 7
-  inFlightDate: 7
-  flightClassSelect: 0
-  airline: 0
-  outFlightSelect: 2
-  inFlightSelect: 1
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>17.009s</td>
-<td class="failures">failed</td>
-</tr>
-<tr>
-<td class="success">TicketInforCheck[7](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@1527dbb1
-  creditNum: 123456789
-  flightType: 1
-  passCountSelect: 3
-  outFlightPortSelect: 7
-  outFlightMonth: 7
-  outFlightDate: 7
-  inFlightPortSelect: 2
-  inFlightMonth: 8
-  inFlightDate: 8
-  flightClassSelect: 1
-  airline: 0
-  outFlightSelect: 3
-  inFlightSelect: 0
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>14.050s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">TicketInforCheck[8](demo.TicketInfor Object {
-  userName: tutorial
-  passWord: tutorial
-  firstName0: null
-  lastName0: null
-  passList: [[Ljava.lang.String;@355b5bce
-  creditNum: 123456789
-  flightType: 0
-  passCountSelect: 1
-  outFlightPortSelect: 8
-  outFlightMonth: 8
-  outFlightDate: 8
-  inFlightPortSelect: 1
-  inFlightMonth: 9
-  inFlightDate: 9
-  flightClassSelect: 2
-  airline: 0
-  outFlightSelect: 0
-  inFlightSelect: 1
-  billAddress: Ly Tu Trong
-  billCity: Ho Chi Minh
-  billState: HCM
-  billPostal: 700000
-  delAddress: Ly Tu Trong
-  delCity: Ho Chi Minh
-  delState: HCM
-  delPostal: 700000
-  outFlightPort: null
-  outFlightName: null
-  outFlightClass: null
-  outFlightPrice: null
-  inFlightPort: null
-  inFlightName: null
-  inFlightClass: null
-  inFlightPrice: null
-  passCount: null
-  billAdd: null
-  delAdd: null
-  tax: null
-  totalPrice: null
-}, true)</td>
-<td>9.761s</td>
-<td class="success">passed</td>
 </tr>
 </table>
-</div>
-<div id="tab2" class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>Starting ChromeDriver 2.33.506106 (8a06c39c4582fbfbab6966dbb1c38a9173bfb1a2) on port 34648
-Only local connections are allowed.
-Dec 14, 2017 3:57:38 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -894,7 +199,7 @@ INFO: Detected dialect: OSS
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.3.1</a> at Dec 14, 2017, 4:00:24 PM</p>
+<a href="http://www.gradle.org">Gradle 4.3.1</a> at Dec 15, 2017, 1:08:53 PM</p>
 </div>
 </div>
 </body>
