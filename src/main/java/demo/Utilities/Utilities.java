@@ -14,9 +14,13 @@ import java.util.Scanner;
 
 public class Utilities {
 
-    public static void waitForLoad(WebDriver driver, String presence) {
-        WebDriverWait wait = new WebDriverWait(driver, 0);
-        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(By.name(presence)));
+    public static void waitForLoad(WebDriver driver,String elementType, String presence) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        if (elementType == "name") {
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.name(presence)));
+        } else if (elementType == "xpath"){
+            wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(presence)));
+        }
     }
 
     public static Object[][] ParseTestDataFromCSV (String CSVPath) throws Exception{

@@ -35,7 +35,7 @@ public class BookingTest {
         //Log In
         HomePage homePage = new HomePage(driver);
         homePage.validLogIn(inputData);
-        Utilities.waitForLoad(driver, "findFlights");
+        Utilities.waitForLoad(driver, "name","findFlights");
 
         //login check
         Assert.assertEquals(driver.getCurrentUrl().contains("mercuryreservation"), true);
@@ -43,14 +43,18 @@ public class BookingTest {
         //Flight Finder
         FlightFinder flightFinderPage = new FlightFinder(driver);
         TicketInfor flightFinder = flightFinderPage.selectFlight(inputData);
+        Utilities.waitForLoad(driver, "name", "reserveFlights");
 
         //Select Flight
         SelectFlight selectFlightPage = new SelectFlight(driver);
         String[] selectFlight = selectFlightPage.selectFlight(inputData);
+        Utilities.waitForLoad(driver, "name","buyFlights");
 
         //Passenger Details
         PassDetails passDetailsPage = new PassDetails(driver);
         String[] passDetails = passDetailsPage.inPutInfor(inputData);
+
+        Utilities.waitForLoad(driver, "xpath","/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[7]/td/table/tbody/tr/td[2]/a/img");
 
         //Cast Ticket Information
         TicketInfor expect = new TicketInfor();
