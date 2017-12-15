@@ -96,7 +96,7 @@ public class BookingTest {
                 System.setProperty("webdriver.gecko.driver", "./WebDriver/geckodriver.exe");
                 driver = new FirefoxDriver();
             } else if (browserName.equalsIgnoreCase("IE")){
-                System.setProperty("webdriver.gecko.driver", "./WebDriver/geckodriver.exe");
+                System.setProperty("webdriver.ie.driver", "./WebDriver/iedriver86.exe");
                 driver = new InternetExplorerDriver();
             }
         } else if (OsName.equalsIgnoreCase("mac")) {
