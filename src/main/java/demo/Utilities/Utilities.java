@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Utilities {
 
     public static void waitForLoad(WebDriver driver,String elementType, String presence) {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 2);
         if (elementType == "name") {
             wait.until(ExpectedConditions.presenceOfElementLocated(By.name(presence)));
         } else if (elementType == "xpath"){
@@ -23,7 +23,7 @@ public class Utilities {
         }
     }
 
-    public static Object[][] ParseTestDataFromCSV (String CSVPath) throws Exception{
+    public static Object[][] ParseTestDataFromCSV (String CSVPath, String browser) throws Exception{
 
         List<List<String>> listData = new ArrayList<>();
         Scanner scanner = new Scanner(new File(CSVPath));
@@ -77,7 +77,7 @@ public class Utilities {
             dt.setPassList(passList);
 
             out[i][0] = dt;
-            out[i][1] = true;
+            out[i][1] = browser;
         }
 
 

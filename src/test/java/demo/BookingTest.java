@@ -17,17 +17,26 @@ public class BookingTest {
 
     public WebDriver driver;
     public String CSVPath = "./TestData/Book1.csv";
+    public String browser = "";
 
     @DataProvider(name = "TestData")
     public Object[][] getTestData() throws Exception{
 
-        Object[][] out = Utilities.ParseTestDataFromCSV(CSVPath);
+        Object[][] out = Utilities.ParseTestDataFromCSV(CSVPath, this.browser);
+//        System.out.println(this.browser);
         return out;
 
     }
 
     @Test(dataProvider = "TestData")
-    public void TicketInforCheck(TicketInfor inputData, Boolean temp) throws Exception {
+    public void TicketInforCheck(TicketInfor inputData, String browserName) throws Exception {
+
+        System.out.println(browserName);
+//        System.out.println(this.browser);
+
+        if (browserName.equalsIgnoreCase("safari")){
+            System.out.println("Testing on safari");
+        }
 
         //home page check
         Assert.assertEquals(driver.getCurrentUrl(),"http://newtours.demoaut.com/");
@@ -87,10 +96,17 @@ public class BookingTest {
 
     }
 
+    @BeforeClass
+    @Parameters({"browserName" , "osName"})
+    public void beforeClass(String browserName, String OsName) throws Exception {
+        this.browser = browserName;
+    }
+
     @BeforeMethod
     @Parameters({"browserName" , "osName"})
     public void beforeMethod(String browserName, String OsName) throws Exception {
 
+//        this.browser = browserName;
         // Init Webdriver based on browser and go to test page
         if (OsName.equalsIgnoreCase("windows")) {
             if (browserName.equalsIgnoreCase("chrome")) {
